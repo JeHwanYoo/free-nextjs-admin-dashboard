@@ -20,7 +20,7 @@ echo "-------------------------------------"
 aws ecr get-login-password --region "$AWS_REGION" --profile "$AWS_PROFILE" | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com"
 
 # Docker 이미지 빌드
-docker build --platform linux/amd64 -t "$REPOSITORY_NAME:$IMAGE_TAG" .
+docker build -t "$REPOSITORY_NAME:$IMAGE_TAG" .
 
 # ECR 리포지토리 URL
 ECR_REPO_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY_NAME"
