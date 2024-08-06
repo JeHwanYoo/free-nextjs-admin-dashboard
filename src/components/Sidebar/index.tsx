@@ -1,21 +1,21 @@
-"use client";
+'use client'
 
-import React, { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import SidebarItem from "@/components/Sidebar/SidebarItem";
-import ClickOutside from "@/components/ClickOutside";
-import useLocalStorage from "@/hooks/useLocalStorage";
+import React, { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import Image from 'next/image'
+import SidebarItem from '@/components/Sidebar/SidebarItem'
+import ClickOutside from '@/components/ClickOutside'
+import useLocalStorage from '@/hooks/useLocalStorage'
 
 interface SidebarProps {
-  sidebarOpen: boolean;
-  setSidebarOpen: (arg: boolean) => void;
+  sidebarOpen: boolean
+  setSidebarOpen: (arg: boolean) => void
 }
 
 const menuGroups = [
   {
-    name: "MENU",
+    name: 'MENU',
     menuItems: [
       {
         icon: (
@@ -45,9 +45,9 @@ const menuGroups = [
             />
           </svg>
         ),
-        label: "Dashboard",
-        route: "#",
-        children: [{ label: "eCommerce", route: "/" }],
+        label: 'Dashboard',
+        route: '#',
+        children: [{ label: 'eCommerce', route: '/' }],
       },
       {
         icon: (
@@ -65,8 +65,8 @@ const menuGroups = [
             />
           </svg>
         ),
-        label: "Calendar",
-        route: "/calendar",
+        label: 'Calendar',
+        route: '/calendar',
       },
       {
         icon: (
@@ -88,8 +88,8 @@ const menuGroups = [
             />
           </svg>
         ),
-        label: "Profile",
-        route: "/profile",
+        label: 'Profile',
+        route: '/profile',
       },
       {
         icon: (
@@ -123,11 +123,11 @@ const menuGroups = [
             />
           </svg>
         ),
-        label: "Forms",
-        route: "#",
+        label: 'Forms',
+        route: '#',
         children: [
-          { label: "Form Elements", route: "/forms/form-elements" },
-          { label: "Form Layout", route: "/forms/form-layout" },
+          { label: 'Form Elements', route: '/forms/form-elements' },
+          { label: 'Form Layout', route: '/forms/form-layout' },
         ],
       },
       {
@@ -158,8 +158,8 @@ const menuGroups = [
             </defs>
           </svg>
         ),
-        label: "Tables",
-        route: "/tables",
+        label: 'Tables',
+        route: '/tables',
       },
       {
         icon: (
@@ -193,13 +193,13 @@ const menuGroups = [
             </defs>
           </svg>
         ),
-        label: "Settings",
-        route: "/settings",
+        label: 'Settings',
+        route: '/settings',
       },
     ],
   },
   {
-    name: "OTHERS",
+    name: 'OTHERS',
     menuItems: [
       {
         icon: (
@@ -233,8 +233,8 @@ const menuGroups = [
             </defs>
           </svg>
         ),
-        label: "Chart",
-        route: "/chart",
+        label: 'Chart',
+        route: '/chart',
       },
       {
         icon: (
@@ -272,11 +272,11 @@ const menuGroups = [
             </defs>
           </svg>
         ),
-        label: "UI Elements",
-        route: "#",
+        label: 'UI Elements',
+        route: '#',
         children: [
-          { label: "Alerts", route: "/ui/alerts" },
-          { label: "Buttons", route: "/ui/buttons" },
+          { label: 'Alerts', route: '/ui/alerts' },
+          { label: 'Buttons', route: '/ui/buttons' },
         ],
       },
       {
@@ -311,26 +311,26 @@ const menuGroups = [
             </defs>
           </svg>
         ),
-        label: "Authentication",
-        route: "#",
+        label: 'Authentication',
+        route: '#',
         children: [
-          { label: "Sign In", route: "/auth/signin" },
-          { label: "Sign Up", route: "/auth/signup" },
+          { label: 'Sign In', route: '/auth/signin' },
+          { label: 'Sign Up', route: '/auth/signup' },
         ],
       },
     ],
   },
-];
+]
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-  const pathname = usePathname();
-  const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
+  const pathname = usePathname()
+  const [pageName, setPageName] = useLocalStorage('selectedMenu', 'dashboard')
 
   return (
     <ClickOutside onClick={() => setSidebarOpen(false)}>
       <aside
         className={`fixed left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* <!-- SIDEBAR HEADER --> */}
@@ -339,7 +339,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <Image
               width={176}
               height={32}
-              src={"/images/logo/logo.svg"}
+              src={'/images/logo/logo.svg'}
               alt="Logo"
               priority
             />
@@ -393,7 +393,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         </div>
       </aside>
     </ClickOutside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const CheckboxThree = () => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false)
 
   return (
     <div>
@@ -15,17 +15,17 @@ const CheckboxThree = () => {
             id="checkboxLabelThree"
             className="sr-only"
             onChange={() => {
-              setIsChecked(!isChecked);
+              setIsChecked(!isChecked)
             }}
           />
           <div
             className={`box mr-4 flex h-5 w-5 items-center justify-center rounded border ${
-              isChecked && "border-primary bg-gray dark:bg-transparent"
+              isChecked && 'border-primary bg-gray dark:bg-transparent'
             }`}
           >
             <span
               className={`text-primary opacity-0 ${
-                isChecked && "!opacity-100"
+                isChecked && '!opacity-100'
               }`}
             >
               <svg
@@ -47,7 +47,7 @@ const CheckboxThree = () => {
         Checkbox Text
       </label>
     </div>
-  );
-};
+  )
+}
 
-export default CheckboxThree;
+export default CheckboxThree

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const SwitcherFour = () => {
-  const [enabled, setEnabled] = useState<boolean>(false);
+  const [enabled, setEnabled] = useState<boolean>(false)
 
   return (
     <div>
@@ -15,19 +15,19 @@ const SwitcherFour = () => {
             id="toggle4"
             className="sr-only"
             onChange={() => {
-              setEnabled(!enabled);
+              setEnabled(!enabled)
             }}
           />
           <div className="block h-8 w-14 rounded-full bg-black"></div>
           <div
             className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
-              enabled && "!right-1 !translate-x-full"
+              enabled && '!right-1 !translate-x-full'
             }`}
           ></div>
         </div>
       </label>
     </div>
-  );
-};
+  )
+}
 
-export default SwitcherFour;
+export default SwitcherFour

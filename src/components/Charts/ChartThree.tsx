@@ -1,28 +1,28 @@
-import { ApexOptions } from "apexcharts";
-import React from "react";
-import ReactApexChart from "react-apexcharts";
+import { ApexOptions } from 'apexcharts'
+import React from 'react'
+import ReactApexChart from 'react-apexcharts'
 
 interface ChartThreeState {
-  series: number[];
+  series: number[]
 }
 
 const options: ApexOptions = {
   chart: {
-    fontFamily: "Satoshi, sans-serif",
-    type: "donut",
+    fontFamily: 'Satoshi, sans-serif',
+    type: 'donut',
   },
-  colors: ["#3C50E0", "#6577F3", "#8FD0EF", "#0FADCF"],
-  labels: ["Desktop", "Tablet", "Mobile", "Unknown"],
+  colors: ['#3C50E0', '#6577F3', '#8FD0EF', '#0FADCF'],
+  labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
   legend: {
     show: false,
-    position: "bottom",
+    position: 'bottom',
   },
 
   plotOptions: {
     pie: {
       donut: {
-        size: "65%",
-        background: "transparent",
+        size: '65%',
+        background: 'transparent',
       },
     },
   },
@@ -47,10 +47,10 @@ const options: ApexOptions = {
       },
     },
   ],
-};
+}
 
 const ChartThree: React.FC = () => {
-  const series = [65, 34, 12, 56];
+  const series = [65, 34, 12, 56]
 
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-5">
@@ -143,7 +143,7 @@ const ChartThree: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChartThree;
+export default ChartThree

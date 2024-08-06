@@ -1,13 +1,13 @@
-import Link from "next/link";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { Metadata } from "next";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import Link from 'next/link'
+import Breadcrumb from '@/components/Breadcrumbs/Breadcrumb'
+import { Metadata } from 'next'
+import DefaultLayout from '@/components/Layouts/DefaultLayout'
 
 export const metadata: Metadata = {
-  title: "Next.js Buttons | TailAdmin - Next.js Dashboard Template",
+  title: 'Next.js Buttons | TailAdmin - Next.js Dashboard Template',
   description:
-    "This is Next.js Buttons page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
-};
+    'This is Next.js Buttons page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template',
+}
 
 const Buttons = () => {
   return (
@@ -472,7 +472,7 @@ const Buttons = () => {
         </div>
       </div>
     </DefaultLayout>
-  );
-};
+  )
+}
 
-export default Buttons;
+export default Buttons

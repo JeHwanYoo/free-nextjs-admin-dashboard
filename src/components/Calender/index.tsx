@@ -1,4 +1,4 @@
-import Breadcrumb from "../Breadcrumbs/Breadcrumb";
+import Breadcrumb from '../Breadcrumbs/Breadcrumb'
 
 const Calendar = () => {
   return (
@@ -267,7 +267,7 @@ const Calendar = () => {
       </div>
       {/* <!-- ====== Calendar Section End ====== --> */}
     </div>
-  );
-};
+  )
+}
 
-export default Calendar;
+export default Calendar

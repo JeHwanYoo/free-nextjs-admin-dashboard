@@ -1,24 +1,24 @@
-"use client";
-import "jsvectormap/dist/jsvectormap.css";
-import "flatpickr/dist/flatpickr.min.css";
-import "@/css/satoshi.css";
-import "@/css/style.css";
-import React, { useEffect, useState } from "react";
-import Loader from "@/components/common/Loader";
+'use client'
+import 'jsvectormap/dist/jsvectormap.css'
+import 'flatpickr/dist/flatpickr.min.css'
+import '@/css/satoshi.css'
+import '@/css/style.css'
+import React, { useEffect, useState } from 'react'
+import Loader from '@/components/common/Loader'
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [loading, setLoading] = useState<boolean>(true)
 
   // const pathname = usePathname();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
+    setTimeout(() => setLoading(false), 1000)
+  }, [])
 
   return (
     <html lang="en">
@@ -28,5 +28,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }
