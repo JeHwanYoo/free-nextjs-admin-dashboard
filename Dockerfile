@@ -30,7 +30,10 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/next.config.mjs ./
 
 # 포트 설정
-EXPOSE 3000
+EXPOSE 80
+
+# 환경 변수 설정
+ENV PORT 80
 
 # Next.js 애플리케이션 시작
 CMD ["npm", "start"]
