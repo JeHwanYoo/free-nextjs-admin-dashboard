@@ -20,7 +20,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image to ECR...
       - docker push $ECR_REPOSITORY_URI:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"%s","imageUri":"%s"}]' "${ContainerName}" "$ECR_REPOSITORY_URI:latest" > imagedefinitions.json
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
+    - imagedefinitions.json
