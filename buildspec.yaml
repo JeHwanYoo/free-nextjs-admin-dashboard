@@ -18,10 +18,12 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Tagging the Docker image...
+      - docker tag $ECR_REPOSITORY_URI:latest $ECR_REPOSITORY_URI:latest
       - echo Pushing the Docker image to ECR...
       - docker push $ECR_REPOSITORY_URI:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' "${ContainerName}" "$ECR_REPOSITORY_URI:latest" > imagedefinitions.json
+      - printf '[{"name":"%s","imageUri":"%s"}]' "$ECR_REPOSITORY_URI" "$ECR_REPOSITORY_URI:latest" > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
